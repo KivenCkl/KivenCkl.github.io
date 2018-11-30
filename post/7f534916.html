@@ -110,7 +110,20 @@
   
 
 
-
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 
   <meta name="description" content="引言 近来，在开展课题时遇到了需要将梯形波进行傅里叶级数展开的问题，查询了一些资料（惭愧，一开始就没想着自己动手积分），然后没有找到自己想要的结果（其实有相近的，只不过不是任意周期的，当时没有转变过来），最后还是动手算出来了，在这里做一个小小的记录，算是回顾以前的知识吧，捂脸。 由于像三角波，矩形波，梯形波这种波形不连续，因此在仿真软件中很容易出现计算不收敛的情况。所以，在这种情况下，利用">
 <meta property="og:type" content="article">
