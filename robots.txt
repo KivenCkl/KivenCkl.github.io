@@ -11,4 +11,4 @@ Disallow: /vendors/
 Disallow: /fancybox/
 
 Sitemap: https://kivenckl.github.io/sitemap.xml
-Sitemap: https://kivenckl.github.io//baidusitemap.xml
+Sitemap: https://kivenckl.github.io/baidusitemap.xml

@@ -384,6 +384,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/post/7f534916.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/post/7f534916.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -622,6 +632,13 @@ b_n &amp;= {2 \over T} \int_0^T{A_{max} \over T}t \cdot \sin \left( {2 \pi nt\ov
           
 
   
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
 
 
 
@@ -787,7 +804,7 @@ b_n &amp;= {2 \over T} \int_0^T{A_{max} \over T}t \cdot \sin \left( {2 \pi nt\ov
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.5.0</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a></div>
 
 
 
@@ -920,6 +937,43 @@ b_n &amp;= {2 \over T} \int_0^T{A_{max} \over T}t \cdot \sin \left( {2 \pi nt\ov
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'KivenCkl',
+            repo: 'BlogComments',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '703ba0b32614db2beb78709acbc570e558c24e9c',
+            
+                client_id: 'cdce08453afbddb2efcb'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
 
 
 
