@@ -56,6 +56,12 @@
 
 
 
+  
+  
+    
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
 
 
 
@@ -93,7 +99,7 @@
     scheme: 'Mist',
     version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
+    fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -125,7 +131,7 @@
 <meta property="og:image" content="http://yoursite.com/post/9b809ec6/github.png">
 <meta property="og:image" content="http://yoursite.com/post/9b809ec6/coding.png">
 <meta property="og:image" content="http://yoursite.com/post/9b809ec6/pages.png">
-<meta property="og:updated_time" content="2019-01-03T09:12:39.298Z">
+<meta property="og:updated_time" content="2019-01-15T08:17:50.808Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 搭建个人博客指南">
 <meta name="twitter:description" content="引言 人脑有限，对于同一个问题，也许当时花了许久时间解决了，然而过了一段时间，只留下一个印象，当再次需要解决时，还是需要较长时间来寻找以前的资料。因此，在这里建立个人博客，一是为了整理记录，让自己省心；二是知识的分享，如果这里的信息恰好能够帮助你，我同样也会感到非常开心。 其实在一年前我就尝试过使用 Hexo 和 Github Page 来搭建个人博客，但是当时主要是觉得很炫，并没有耐心把知识">
@@ -415,7 +421,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-03 17:12:39" itemprop="dateModified" datetime="2019-01-03T17:12:39+08:00">2019-01-03</time>
+                <time title="修改时间：2019-01-15 16:17:50" itemprop="dateModified" datetime="2019-01-15T16:17:50+08:00">2019-01-15</time>
               
             
           </span>
@@ -517,13 +523,13 @@
 <p>安装完成后在命令提示符中输入 <code>git --version</code> 验证是否安装成功。</p>
 <h3 id="注册-github-账号">注册 Github 账号</h3>
 <p>打开 <a href="https://github.com" class="uri" target="_blank" rel="noopener">https://github.com</a> ，新建一个项目，输入自己的项目名字，后面一定要加 <code>.github.io</code> 后缀，最好是你的 <code>Github 账号名(唯一)+.github.io</code> ，如下图所示。</p>
-<p><img src="/post/9b809ec6/github.png"></p>
+<p><img src="/post/9b809ec6/github.png" title="github"></p>
 <p>由于我已经用自己的名字注册过了，所以这里显示不可用。之后就可以通过 <code>https://yourname.github.io</code> 访问你建好的网站了。</p>
 <h3 id="注册-coding-账号">注册 Coding 账号</h3>
 <p>由于 github 的访问速度较慢，因此我将文件代码同时部署至 coding 上，打开 <a href="https://dev.tencent.com/" target="_blank" rel="noopener">腾讯云开发者平台</a> ，新建一个项目，项目名称可同样设为 <code>yourname</code> ，如下图所示。</p>
-<p><img src="/post/9b809ec6/coding.png"></p>
+<p><img src="/post/9b809ec6/coding.png" title="coding"></p>
 <p>之后第一次上传代码后，在代码下拉菜单中有个 <code>Pages 服务</code> ，开启 <code>静态 Pages 应用</code> ，即可通过 <code>https://yourname.coding.me</code> 访问你的网站内容。</p>
-<p><img src="/post/9b809ec6/pages.png"></p>
+<p><img src="/post/9b809ec6/pages.png" title="pages"></p>
 <h3 id="安装-hexo">安装 Hexo</h3>
 <p>在合适的地方新建一个文件夹，用来存放自己的博客文件，如 <code>blog</code> ，然后进入 <code>blog</code> 文件夹右击 <code>Git Bash Here</code> ，打开 git 的控制台窗口，之后我们所有的操作都在 git 控制台中进行。</p>
 <p>执行如何命令安装 Hexo：</p>
@@ -724,6 +730,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/post/c15d2abe.html" rel="prev" title="Workbench 中分布式弹簧振子对板的减振仿真">
+                Workbench 中分布式弹簧振子对板的减振仿真 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -792,7 +802,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -828,7 +838,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -994,6 +1006,8 @@
 
 
 
+  
+
 
 
 
@@ -1021,6 +1035,11 @@
   
   
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
   
 
 
