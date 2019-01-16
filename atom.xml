@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-15T08:14:48.704Z</updated>
+  <updated>2019-01-16T00:34:14.022Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/post/c15d2abe.html"/>
     <id>http://yoursite.com/post/c15d2abe.html</id>
     <published>2019-01-15T06:51:47.000Z</published>
-    <updated>2019-01-15T08:14:48.704Z</updated>
+    <updated>2019-01-16T00:34:14.022Z</updated>
     
     <content type="html"><![CDATA[<h2 id="目标">目标</h2><p>为了研究在一块板上布置多个弹簧振子对板的减振效果，给定板边缘一个初始位移，观测弹簧的变形以及板的变形情况。结构如下图所示，利用 ANSYS Workbench 有限元软件进行仿真。</p><p><img src="/post/c15d2abe/弹簧振子分布.png" title="弹簧振子分布"></p><a id="more"></a><h2 id="结构说明">结构说明</h2><p>板的长宽均为 500 mm，厚度为 2 mm，材料为铝，使用壳单元，弹簧振子均匀分布在板上，共 25 个，弹簧的刚度为 <span class="math inline">\(9.593\times 10^3​\)</span> N/m，弹簧上端有个质点单元，质量为 0.027 kg。</p><p>观察分析该结构，可以发现其在 y 方向（以水平方向为 x 轴，纵向为 y 轴，垂直纸面向外为 z 轴）为对称结构，可以仅分析单条（即水平 5 个弹簧振子布置）的变形，然后通过对结果进行阵列得到最终结果。</p><p><img src="/post/c15d2abe/单元结构.png" title="单元结构"></p><h2 id="实现过程">实现过程</h2><p>本仿真环境为 <code>Win10, ANSYS Workbench 18.0</code>。</p><p>为了实现最后的对结果集进行阵列，需打开 Workbench 的测试功能，选择工具栏中 <code>Tools -&gt; Options -&gt; Appearance</code> ，勾选 <code>Beta Options</code>。</p><p><img src="/post/c15d2abe/Workbench设置.png" title="Workbench设置"></p><p>OK，一切就绪。</p><p>首先选择谐响应分析（动力学分析）<code>Harmonic Response</code> ，设置 <code>Engineering Data</code> 添加 <code>Aluminum Alloy</code> 材料。</p><p>接着绘图 <code>Geometry</code> ，可选择自己顺手的工具绘制导入即可。结构比较简单，我使用 <code>DesignModeler</code> 绘制该结构。注意的是板只需要绘制一个面即可，Workbench 会自动使用壳单元进行分析，之后输入厚度就好了。另外就是必须在面上定义好 5 个点，用于之后连接弹簧。</p><p><img src="/post/c15d2abe/模型.png" title="模型"></p><p>然后双击 <code>Model</code> 打开 <code>Mechanical</code> 软件，设置板的厚度以及材料。</p><p><img src="/post/c15d2abe/板的属性设置.png" title="板的属性设置"></p><p>定义 5 个质点 <code>Point Mass</code> ，右击选择 <code>Promote to Remote Point</code> ，即布置在远端点。并设置其质量为 0.027 kg。</p><p><img src="/post/c15d2abe/质点位置设置.png" title="质点位置设置"></p><p><img src="/post/c15d2abe/质点质量设置.png" title="质点质量设置"></p><p>对远端点进行设置，选择自由点 <code>Free Standing</code>，并设置其各自位置。</p><p><img src="/post/c15d2abe/远端点设置.png" title="远端点设置"></p><p>设置好 5 个质点之后，就只剩下弹簧的连接了。右击 <code>Model</code> ，选择插入连接件(<code>Connections</code>) 中的弹簧(<code>Spring</code>)，接着设置其刚度，一端连接质点位置（同远端点位置），另一端连接板上对应的点（之前绘制模型中设置的点）。按照同样设置好 5 个弹簧。</p><p><img src="/post/c15d2abe/弹簧设置.png" title="弹簧设置"></p><p><img src="/post/c15d2abe/弹簧模型.png" title="弹簧模型"></p><p>设置扫频范围以及边界条件，频率范围为 <code>[10, 800]</code> ，求解方法为 <code>Full</code> ，因为求解的是给定初始位移问题，无法利用模态叠加法进行求解。边界条件为，添加 <code>Remote Displacement</code> 约束上下右三条边 x, y 方向固定，其它自由；添加 <code>Displacement</code> 给定左边初始 z 方向位移 10 mm，x, y 方向 Free。</p><p><img src="/post/c15d2abe/扫频设置.png" title="扫频设置"></p><p>最后，右击 <code>Model</code> 选择 <code>Symmetry</code>，这里只需要一个方向的阵列即可，因此按如下设置即可。</p><p><img src="/post/c15d2abe/对称设置.png" title="对称设置"></p><p>对其进行网格划分之后，就可以看到完整模型结构了。</p><p><img src="/post/c15d2abe/网格.png" title="网格"></p><p>求解。观察 200 Hz 和 300 Hz 下的变形情况。</p><p>200 Hz：</p><p><img src="/post/c15d2abe/200Hz.gif" title="200Hz"></p><p>300 Hz：</p><p><img src="/post/c15d2abe/300Hz.gif" title="300Hz"></p><p>本次仿真到此也就结束了，结果还是挺理想的。如有不对的地方，还请指出，讨论并改正，谢谢！</p>]]></content>
     
