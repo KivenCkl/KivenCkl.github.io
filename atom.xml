@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-16T00:34:14.022Z</updated>
+  <updated>2019-04-20T02:35:04.117Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>工信部新能源汽车数据爬虫</title>
+    <link href="http://yoursite.com/post/9af5d37f.html"/>
+    <id>http://yoursite.com/post/9af5d37f.html</id>
+    <published>2019-04-19T15:01:15.000Z</published>
+    <updated>2019-04-20T02:35:04.117Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="目标">目标</h2><p>爬取工信部新能源车辆信息数据。</p><p>相关代码及输出请移步：<a href="https://github.com/KivenCkl/New_Energy_Vehicles_Info_Crawler" target="_blank" rel="noopener">工信部新能源汽车数据爬虫</a></p><a id="more"></a><h2 id="数据来源">数据来源</h2><p>爬取的数据来源于以下三部分：</p><ol type="1"><li>道路机动车辆生产企业及产品，基本为doc文件形式</li><li>新能源汽车推广应用推荐车型目录，基本为html形式</li><li>免征车辆购置税的新能源汽车车型目录，基本为pdf文件形式</li></ol><p>其中数据主要为第2、3部分。</p><h2 id="输出">输出</h2><p>部分结果如图所示：</p><p><img src="/post/9af5d37f/输出.png"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;目标&quot;&gt;目标&lt;/h2&gt;
+&lt;p&gt;爬取工信部新能源车辆信息数据。&lt;/p&gt;
+&lt;p&gt;相关代码及输出请移步：&lt;a href=&quot;https://github.com/KivenCkl/New_Energy_Vehicles_Info_Crawler&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;工信部新能源汽车数据爬虫&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="爬虫" scheme="http://yoursite.com/tags/Crawler/"/>
+    
+  </entry>
   
   <entry>
     <title>Workbench 中分布式弹簧振子对板的减振仿真</title>
