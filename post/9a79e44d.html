@@ -23,8 +23,23 @@
 
 
 
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
 
 
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
 
 
 
@@ -65,10 +80,50 @@
 
 
 
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
 
@@ -85,6 +140,10 @@
   <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
 
 
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
 
 
 
@@ -98,12 +157,12 @@
     root: '/',
     scheme: 'Mist',
     version: '6.5.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":true,"async":true,"transition":{"post_block":"perspectiveLeftIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"perspectiveLeftIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -309,8 +368,33 @@
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
 
       
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
       
     </ul>
   
@@ -320,6 +404,33 @@
 
   
 
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
   
 </nav>
 
@@ -352,6 +463,8 @@
   
 
   
+    <div class="reading-progress-bar"></div>
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -363,7 +476,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KivenC">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -443,6 +556,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/post/9a79e44d.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/post/9a79e44d.html" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -620,56 +743,56 @@
 <h3 id="多行公式">多行公式</h3>
 <h4 id="长公式">长公式</h4>
 <p>无须对齐可使用 <code>multline</code> , 需要对齐使用 <code>split</code> , 用 <code>\\</code> 和 <code>&amp;</code> 来分行和设置对齐的位置，例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;multline&#125;</span><br><span class="line">x=a+b+c+&#123;&#125; \\</span><br><span class="line">d+e+f+g</span><br><span class="line">\end&#123;multline&#125;$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="formula">$$<span class="tag">\<span class="name">begin</span><span class="string">&#123;multline&#125;</span></span></span></span><br><span class="line"><span class="formula">x=a+b+c+&#123;&#125; <span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula">d+e+f+g</span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">end</span><span class="string">&#123;multline&#125;</span></span>$$</span></span><br></pre></td></tr></table></figure>
 <p><span class="math display">\[\begin{multline}
 x=a+b+c+{} \\
 d+e+f+g
 \end{multline}\]</span></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;split&#125;</span><br><span class="line">x=&#123;&#125;$a+b+c+&#123;&#125; \\</span><br><span class="line">$d+e+f+g</span><br><span class="line">\end&#123;split&#125;$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span><span class="symbol">$</span>\begin&#123;split&#125;</span><br><span class="line">x=&#123;&#125;<span class="symbol">$</span>a+b+c+&#123;&#125; \\</span><br><span class="line"><span class="meta"><span class="meta-keyword">$d</span>+e+f+g</span></span><br><span class="line">\end&#123;split&#125;<span class="symbol">$</span><span class="symbol">$</span></span><br></pre></td></tr></table></figure>
 <p><span class="math display">\[\begin{split}
 x={}&amp;a+b+c+{} \\
 &amp;d+e+f+g
 \end{split}\]</span></p>
 <h4 id="公式组">公式组</h4>
 <p>不需要对齐的公式组用 <code>gather</code> , 需要对齐使用 <code>align</code> , 例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;gather&#125;</span><br><span class="line">a=b+c+d \\</span><br><span class="line">x=y+z</span><br><span class="line">\end&#123;gather&#125;$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="formula">$$<span class="tag">\<span class="name">begin</span><span class="string">&#123;gather&#125;</span></span></span></span><br><span class="line"><span class="formula">a=b+c+d <span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula">x=y+z</span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">end</span><span class="string">&#123;gather&#125;</span></span>$$</span></span><br></pre></td></tr></table></figure>
 <p><span class="math display">\[\begin{gather}
 a=b+c+d \\
 x=y+z
 \end{gather}\]</span></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;align&#125;</span><br><span class="line">a &amp;=b+c+d \\</span><br><span class="line">x &amp;=y+z</span><br><span class="line">\end&#123;align&#125;$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$\<span class="keyword">begin</span>&#123;<span class="keyword">align</span>&#125;</span><br><span class="line">a &amp;=b+<span class="keyword">c</span>+d \\</span><br><span class="line"><span class="keyword">x</span> &amp;=y+z</span><br><span class="line">\<span class="keyword">end</span>&#123;<span class="keyword">align</span>&#125;$$</span><br></pre></td></tr></table></figure>
 <p><span class="math display">\[\begin{align}
 a &amp;=b+c+d \\
 x &amp;=y+z
 \end{align}\]</span></p>
 <h4 id="分支公式">分支公式</h4>
 <p>分段函数通常用 <code>cases</code> , 例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$y=\begin&#123;cases&#125;</span><br><span class="line">-x,\quad &amp;x \leq 0 \\</span><br><span class="line">x, &amp;x&gt;0</span><br><span class="line">\end&#123;cases&#125;$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="formula">$$y=<span class="tag">\<span class="name">begin</span><span class="string">&#123;cases&#125;</span></span></span></span><br><span class="line"><span class="formula">-x,<span class="tag">\<span class="name">quad</span></span> &amp;x <span class="tag">\<span class="name">leq</span></span> 0 <span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula">x, &amp;x&gt;0</span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">end</span><span class="string">&#123;cases&#125;</span></span>$$</span></span><br></pre></td></tr></table></figure>
 <p><span class="math display">\[y=\begin{cases}
 -x,\quad &amp;x \leq 0 \\
 x, &amp;x&gt;0
 \end{cases}\]</span></p>
 <h4 id="公式编号">公式编号</h4>
 <p>自动编号的公式可以用如下方法表示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;equation&#125;</span><br><span class="line">E=mc^2</span><br><span class="line">\end&#123;equation&#125;$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$$</span>\<span class="keyword">begin</span>&#123;equation&#125;</span><br><span class="line">E=mc^<span class="number">2</span></span><br><span class="line">\<span class="keyword">end</span>&#123;equation&#125;<span class="variable">$$</span></span><br></pre></td></tr></table></figure>
 <p><span class="math display">\[\begin{equation}
 E=mc^2
 \end{equation}\]</span></p>
 <p>也可以通过命令 <code>\tag{n}</code> 手动为公式编号，并使用 <code>\label{}</code> 指令埋下锚点，例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">S(r_k)  = \sum_&#123;r_k \ne r_i&#125; \text&#123;exp&#125;(\frac&#123;-D_s(r_k, r_i)&#125;&#123;\sigma_s^2&#125;)</span><br><span class="line">\tag&#123;1.1&#125;\label&#123;eq:test&#125;$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="formula">$$</span></span><br><span class="line"><span class="formula">S(r_k)  = <span class="tag">\<span class="name">sum</span></span>_&#123;r_k <span class="tag">\<span class="name">ne</span></span> r_i&#125; <span class="tag">\<span class="name">text</span><span class="string">&#123;exp&#125;</span></span>(<span class="tag">\<span class="name">frac</span><span class="string">&#123;-D_s(r_k, r_i)&#125;</span><span class="string">&#123;\sigma_s^2&#125;</span></span>)</span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">tag</span><span class="string">&#123;1.1&#125;</span></span><span class="tag">\<span class="name">label</span><span class="string">&#123;eq:test&#125;</span></span>$$</span></span><br></pre></td></tr></table></figure>
 <p><span class="math display">\[
 S(r_k)  = \sum_{r_k \ne r_i} \text{exp}(\frac{-D_s(r_k, r_i)}{\sigma_s^2})
 \tag{1.1}\label{eq:test}\]</span></p>
 <p>使用 <code>\eqref</code> 指令引用前面埋下的锚点， <code>$\eqref{eq:test}$</code> 将显示为 <span class="math inline">\(\eqref{eq:test}\)</span></p>
 <h4 id="取消公式编号">取消公式编号</h4>
 <p>可在公式后加上 <code>\nonumber</code> 命令取消公式编号，例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;align&#125;</span><br><span class="line">a &amp;=b+c+d \nonumber \\</span><br><span class="line">x &amp;=y+z \nonumber</span><br><span class="line">\end&#123;align&#125;$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="formula">$$<span class="tag">\<span class="name">begin</span><span class="string">&#123;align&#125;</span></span></span></span><br><span class="line"><span class="formula">a &amp;=b+c+d <span class="tag">\<span class="name">nonumber</span></span> <span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula">x &amp;=y+z <span class="tag">\<span class="name">nonumber</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">end</span><span class="string">&#123;align&#125;</span></span>$$</span></span><br></pre></td></tr></table></figure>
 <p><span class="math display">\[\begin{align}
 a &amp;=b+c+d \nonumber \\
 x &amp;=y+z \nonumber
 \end{align}\]</span></p>
 <p>对于公式组，可采用 <code>aligned</code> 不对公式编号，例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;aligned&#125;</span><br><span class="line">a &amp;=b+c+d \\</span><br><span class="line">x &amp;=y+z</span><br><span class="line">\end&#123;aligned&#125;$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="formula">$$<span class="tag">\<span class="name">begin</span><span class="string">&#123;aligned&#125;</span></span></span></span><br><span class="line"><span class="formula">a &amp;=b+c+d <span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula">x &amp;=y+z</span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">end</span><span class="string">&#123;aligned&#125;</span></span>$$</span></span><br></pre></td></tr></table></figure>
 <p><span class="math display">\[\begin{aligned}
 a &amp;=b+c+d \\
 x &amp;=y+z
@@ -689,7 +812,7 @@ x &amp;=y+z
 <hr>
 <h3 id="矩阵">矩阵</h3>
 <p>生成矩阵的命令中每一行以 <code>\\</code> 结束，矩阵的元素之间用 <code>&amp;</code> 来分隔开，例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;matrix&#125;</span><br><span class="line">x_&#123;_&#123;11&#125; &#125; &amp; x_&#123;_&#123;12&#125; &#125; &amp; \dots &amp; x_&#123;_&#123;1n&#125; &#125; \\</span><br><span class="line">x_&#123;_&#123;21&#125; &#125; &amp; x_&#123;_&#123;22&#125; &#125; &amp; \dots &amp; x_&#123;_&#123;2n&#125; &#125; \\</span><br><span class="line">\vdots &amp; \vdots &amp; \ddots  &amp; \vdots  \\</span><br><span class="line">x_&#123;_&#123;m1&#125; &#125; &amp; x_&#123;_&#123;m2&#125; &#125; &amp; \dots &amp; x_&#123;_&#123;mn&#125; &#125; \\</span><br><span class="line">\end&#123;matrix&#125;$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;matrix&#125;</span><br><span class="line">x<span class="number">_</span>&#123;<span class="number">_</span>&#123;<span class="number">11</span>&#125; &#125; &amp; x<span class="number">_</span>&#123;<span class="number">_</span>&#123;<span class="number">12</span>&#125; &#125; &amp; \dots &amp; x<span class="number">_</span>&#123;<span class="number">_</span>&#123;<span class="number">1</span>n&#125; &#125; \\</span><br><span class="line">x<span class="number">_</span>&#123;<span class="number">_</span>&#123;<span class="number">21</span>&#125; &#125; &amp; x<span class="number">_</span>&#123;<span class="number">_</span>&#123;<span class="number">22</span>&#125; &#125; &amp; \dots &amp; x<span class="number">_</span>&#123;<span class="number">_</span>&#123;<span class="number">2</span>n&#125; &#125; \\</span><br><span class="line">\vdots &amp; \vdots &amp; \ddots  &amp; \vdots  \\</span><br><span class="line">x<span class="number">_</span>&#123;<span class="number">_</span>&#123;m1&#125; &#125; &amp; x<span class="number">_</span>&#123;<span class="number">_</span>&#123;m2&#125; &#125; &amp; \dots &amp; x<span class="number">_</span>&#123;<span class="number">_</span>&#123;mn&#125; &#125; \\</span><br><span class="line">\<span class="keyword">end</span>&#123;matrix&#125;$$</span><br></pre></td></tr></table></figure>
 <p><span class="math display">\[\begin{matrix}
 x_{_{11} } &amp; x_{_{12} } &amp; \dots &amp; x_{_{1n} } \\
 x_{_{21} } &amp; x_{_{22} } &amp; \dots &amp; x_{_{2n} } \\
@@ -697,7 +820,7 @@ x_{_{21} } &amp; x_{_{22} } &amp; \dots &amp; x_{_{2n} } \\
 x_{_{m1} } &amp; x_{_{m2} } &amp; \dots &amp; x_{_{mn} } \\
 \end{matrix}\]</span></p>
 <p>带各类不同边界的矩阵:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;pmatrix&#125; a &amp; b \\ c &amp; d \\ \end&#123;pmatrix&#125; \quad</span><br><span class="line">\begin&#123;bmatrix&#125; a &amp; b \\ c &amp; d \\ \end&#123;bmatrix&#125; \quad</span><br><span class="line">\left[ \begin&#123;matrix&#125; a &amp; b \\ c &amp; d \\ \end&#123;matrix&#125; \right] \quad</span><br><span class="line">\begin&#123;Bmatrix&#125; a &amp; b \\ c &amp; d \\ \end&#123;Bmatrix&#125; \quad</span><br><span class="line">\left\&#123; \begin&#123;matrix&#125; a &amp; b \\ c &amp; d \\ \end&#123;matrix&#125; \right\&#125; \quad</span><br><span class="line">\begin&#123;vmatrix&#125; a &amp; b \\ c &amp; d \\ \end&#123;vmatrix&#125; \quad</span><br><span class="line">\begin&#123;Vmatrix&#125; a &amp; b \\ c &amp; d \\ \end&#123;Vmatrix&#125; \quad</span><br><span class="line">\left[ \begin&#123;array&#125; &#123;c|c&#125; a &amp; b \\ c &amp; d \\ \end&#123;array&#125; \right]</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="formula">$$</span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">begin</span><span class="string">&#123;pmatrix&#125;</span></span> a &amp; b <span class="tag">\<span class="name">\</span></span> c &amp; d <span class="tag">\<span class="name">\</span></span> <span class="tag">\<span class="name">end</span><span class="string">&#123;pmatrix&#125;</span></span> <span class="tag">\<span class="name">quad</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">begin</span><span class="string">&#123;bmatrix&#125;</span></span> a &amp; b <span class="tag">\<span class="name">\</span></span> c &amp; d <span class="tag">\<span class="name">\</span></span> <span class="tag">\<span class="name">end</span><span class="string">&#123;bmatrix&#125;</span></span> <span class="tag">\<span class="name">quad</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">left</span><span class="string">[ \begin&#123;matrix&#125; a &amp; b \\ c &amp; d \\ \end&#123;matrix&#125; \right]</span></span> <span class="tag">\<span class="name">quad</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">begin</span><span class="string">&#123;Bmatrix&#125;</span></span> a &amp; b <span class="tag">\<span class="name">\</span></span> c &amp; d <span class="tag">\<span class="name">\</span></span> <span class="tag">\<span class="name">end</span><span class="string">&#123;Bmatrix&#125;</span></span> <span class="tag">\<span class="name">quad</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">left</span></span><span class="tag">\<span class="name">&#123;</span></span> <span class="tag">\<span class="name">begin</span><span class="string">&#123;matrix&#125;</span></span> a &amp; b <span class="tag">\<span class="name">\</span></span> c &amp; d <span class="tag">\<span class="name">\</span></span> <span class="tag">\<span class="name">end</span><span class="string">&#123;matrix&#125;</span></span> <span class="tag">\<span class="name">right</span></span><span class="tag">\<span class="name">&#125;</span></span> <span class="tag">\<span class="name">quad</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">begin</span><span class="string">&#123;vmatrix&#125;</span></span> a &amp; b <span class="tag">\<span class="name">\</span></span> c &amp; d <span class="tag">\<span class="name">\</span></span> <span class="tag">\<span class="name">end</span><span class="string">&#123;vmatrix&#125;</span></span> <span class="tag">\<span class="name">quad</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">begin</span><span class="string">&#123;Vmatrix&#125;</span></span> a &amp; b <span class="tag">\<span class="name">\</span></span> c &amp; d <span class="tag">\<span class="name">\</span></span> <span class="tag">\<span class="name">end</span><span class="string">&#123;Vmatrix&#125;</span></span> <span class="tag">\<span class="name">quad</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">left</span><span class="string">[ \begin&#123;array&#125; &#123;c|c&#125; a &amp; b \\ c &amp; d \\ \end&#123;array&#125; \right]</span></span></span></span><br><span class="line"><span class="formula">$$</span></span><br></pre></td></tr></table></figure>
 <p><span class="math display">\[
 \begin{pmatrix} a &amp; b \\ c &amp; d \\ \end{pmatrix} \quad
 \begin{bmatrix} a &amp; b \\ c &amp; d \\ \end{bmatrix} \quad
@@ -800,7 +923,7 @@ x_{_{m1} } &amp; x_{_{m2} } &amp; \dots &amp; x_{_{mn} } \\
 <hr>
 <h3 id="添加刪除线">添加刪除线</h3>
 <p>在公式内使用 <code>\require{cancel}</code> 来允许 <code>片段删除线</code> 的显示。 声明片段删除线后，使用 <code>\cancel{字符}</code> , <code>\bcancel{字符}</code> , <code>\xcancel{字符}</code> 和 <code>\cancelto{字符}</code> 来实现各种片段删除线效果，例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\require&#123;cancel&#125;\begin&#123;array&#125;&#123;rl&#125;</span><br><span class="line">\verb|y+\cancel&#123;x&#125;| &amp; y+\cancel&#123;x&#125;\\</span><br><span class="line">\verb|\cancel&#123;y+x&#125;| &amp; \cancel&#123;y+x&#125;\\</span><br><span class="line">\verb|y+\bcancel&#123;x&#125;| &amp; y+\bcancel&#123;x&#125;\\</span><br><span class="line">\verb|y+\xcancel&#123;x&#125;| &amp; y+\xcancel&#123;x&#125;\\</span><br><span class="line">\verb|y+\cancelto&#123;0&#125;&#123;x&#125;| &amp; y+\cancelto&#123;0&#125;&#123;x&#125;\\</span><br><span class="line">\verb+\frac&#123;1\cancel9&#125;&#123;\cancel95&#125; = \frac15+&amp; \frac&#123;1\cancel9&#125;&#123;\cancel95&#125; = \frac15 \\</span><br><span class="line">\end&#123;array&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="formula">$$</span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">require</span><span class="string">&#123;cancel&#125;</span></span><span class="tag">\<span class="name">begin</span><span class="string">&#123;array&#125;</span><span class="string">&#123;rl&#125;</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">verb</span></span>|y+<span class="tag">\<span class="name">cancel</span><span class="string">&#123;x&#125;</span></span>| &amp; y+<span class="tag">\<span class="name">cancel</span><span class="string">&#123;x&#125;</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">verb</span></span>|<span class="tag">\<span class="name">cancel</span><span class="string">&#123;y+x&#125;</span></span>| &amp; <span class="tag">\<span class="name">cancel</span><span class="string">&#123;y+x&#125;</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">verb</span></span>|y+<span class="tag">\<span class="name">bcancel</span><span class="string">&#123;x&#125;</span></span>| &amp; y+<span class="tag">\<span class="name">bcancel</span><span class="string">&#123;x&#125;</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">verb</span></span>|y+<span class="tag">\<span class="name">xcancel</span><span class="string">&#123;x&#125;</span></span>| &amp; y+<span class="tag">\<span class="name">xcancel</span><span class="string">&#123;x&#125;</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">verb</span></span>|y+<span class="tag">\<span class="name">cancelto</span><span class="string">&#123;0&#125;</span><span class="string">&#123;x&#125;</span></span>| &amp; y+<span class="tag">\<span class="name">cancelto</span><span class="string">&#123;0&#125;</span><span class="string">&#123;x&#125;</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">verb</span></span>+<span class="tag">\<span class="name">frac</span><span class="string">&#123;1\cancel9&#125;</span><span class="string">&#123;\cancel95&#125;</span> = </span><span class="tag">\<span class="name">frac</span></span>15+&amp; <span class="tag">\<span class="name">frac</span><span class="string">&#123;1\cancel9&#125;</span><span class="string">&#123;\cancel95&#125;</span> = </span><span class="tag">\<span class="name">frac</span></span>15 <span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">end</span><span class="string">&#123;array&#125;</span></span></span></span><br><span class="line"><span class="formula">$$</span></span><br></pre></td></tr></table></figure>
 <p><span class="math display">\[
 \require{cancel}\begin{array}{rl}
 \verb|y+\cancel{x}| &amp; y+\cancel{x}\\
@@ -811,7 +934,7 @@ x_{_{m1} } &amp; x_{_{m2} } &amp; \dots &amp; x_{_{mn} } \\
 \verb+\frac{1\cancel9}{\cancel95} = \frac15+&amp; \frac{1\cancel9}{\cancel95} = \frac15 \\
 \end{array}
 \]</span> 使用 <code>\require{enclose}</code> 来允许 <code>整段删除线</code> 的显示。 声明整段删除线后，使用 <code>\enclose{删除线效果}{字符}</code> 来实现各种整段删除线效果。 其中，删除线效果有 <code>horizontalstrike</code> , <code>verticalstrike</code> , <code>updiagonalstrike</code> 和 <code>downdiagonalstrike</code>，可叠加使用，例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\require&#123;enclose&#125;\begin&#123;array&#125;&#123;rl&#125;</span><br><span class="line">\verb|\enclose&#123;horizontalstrike&#125;&#123;x+y&#125;| &amp; \enclose&#123;horizontalstrike&#125;&#123;x+y&#125;\\</span><br><span class="line">\verb|\enclose&#123;verticalstrike&#125;&#123;\frac xy&#125;| &amp; \enclose&#123;verticalstrike&#125;&#123;\frac xy&#125;\\</span><br><span class="line">\verb|\enclose&#123;updiagonalstrike&#125;&#123;x+y&#125;| &amp; \enclose&#123;updiagonalstrike&#125;&#123;x+y&#125;\\</span><br><span class="line">\verb|\enclose&#123;downdiagonalstrike&#125;&#123;x+y&#125;| &amp; \enclose&#123;downdiagonalstrike&#125;&#123;x+y&#125;\\</span><br><span class="line">\verb|\enclose&#123;horizontalstrike,updiagonalstrike&#125;&#123;x+y&#125;| &amp; \enclose&#123;horizontalstrike,updiagonalstrike&#125;&#123;x+y&#125;\\</span><br><span class="line">\end&#123;array&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="formula">$$</span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">require</span><span class="string">&#123;enclose&#125;</span></span><span class="tag">\<span class="name">begin</span><span class="string">&#123;array&#125;</span><span class="string">&#123;rl&#125;</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">verb</span></span>|<span class="tag">\<span class="name">enclose</span><span class="string">&#123;horizontalstrike&#125;</span><span class="string">&#123;x+y&#125;</span></span>| &amp; <span class="tag">\<span class="name">enclose</span><span class="string">&#123;horizontalstrike&#125;</span><span class="string">&#123;x+y&#125;</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">verb</span></span>|<span class="tag">\<span class="name">enclose</span><span class="string">&#123;verticalstrike&#125;</span><span class="string">&#123;\frac xy&#125;</span></span>| &amp; <span class="tag">\<span class="name">enclose</span><span class="string">&#123;verticalstrike&#125;</span><span class="string">&#123;\frac xy&#125;</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">verb</span></span>|<span class="tag">\<span class="name">enclose</span><span class="string">&#123;updiagonalstrike&#125;</span><span class="string">&#123;x+y&#125;</span></span>| &amp; <span class="tag">\<span class="name">enclose</span><span class="string">&#123;updiagonalstrike&#125;</span><span class="string">&#123;x+y&#125;</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">verb</span></span>|<span class="tag">\<span class="name">enclose</span><span class="string">&#123;downdiagonalstrike&#125;</span><span class="string">&#123;x+y&#125;</span></span>| &amp; <span class="tag">\<span class="name">enclose</span><span class="string">&#123;downdiagonalstrike&#125;</span><span class="string">&#123;x+y&#125;</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">verb</span></span>|<span class="tag">\<span class="name">enclose</span><span class="string">&#123;horizontalstrike,updiagonalstrike&#125;</span><span class="string">&#123;x+y&#125;</span></span>| &amp; <span class="tag">\<span class="name">enclose</span><span class="string">&#123;horizontalstrike,updiagonalstrike&#125;</span><span class="string">&#123;x+y&#125;</span></span><span class="tag">\<span class="name">\</span></span></span></span><br><span class="line"><span class="formula"><span class="tag">\<span class="name">end</span><span class="string">&#123;array&#125;</span></span></span></span><br><span class="line"><span class="formula">$$</span></span><br></pre></td></tr></table></figure>
 <p><span class="math display">\[
 \require{enclose}\begin{array}{rl}
 \verb|\enclose{horizontalstrike}{x+y}| &amp; \enclose{horizontalstrike}{x+y}\\
@@ -893,7 +1016,7 @@ x_{_{m1} } &amp; x_{_{m2} } &amp; \dots &amp; x_{_{mn} } \\
 <hr>
 <h3 id="交换图表使用">交换图表使用</h3>
 <p>使用一行 <code>$\require{AMScd}$</code> 语句来允许交换图表的显示。 声明交换图表后，语法与矩阵相似，在开头使用 <code>begin{CD}</code> , 在结尾使用 <code>end{CD}</code> , 在中间插入图表元素，每个元素之间插入 <code>&amp;</code> , 并在每行结尾处使用 <code>\\</code> , 例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$\require&#123;AMScd&#125;$</span><br><span class="line">\begin&#123;CD&#125;</span><br><span class="line">    A @&gt;a&gt;&gt; B\\</span><br><span class="line">    @V b V V\# @VV c V\\</span><br><span class="line">    C @&gt;&gt;d&gt; D</span><br><span class="line">\end&#123;CD&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$\<span class="keyword">require</span>&#123;AMScd&#125;$</span><br><span class="line">\<span class="keyword">begin</span>&#123;CD&#125;</span><br><span class="line">    A @&gt;a<span class="meta">&gt;&gt; </span>B\\</span><br><span class="line">    @V b V V\<span class="comment"># <span class="doctag">@VV</span> c V\\</span></span><br><span class="line">    C @<span class="meta">&gt;&gt;</span>d&gt; D</span><br><span class="line">\<span class="keyword">end</span>&#123;CD&#125;</span><br></pre></td></tr></table></figure>
 <span class="math inline">\(\require{AMScd}\)</span>
 <span class="math display">\[\begin{CD}
     A @&gt;a&gt;&gt; B\\
@@ -901,7 +1024,7 @@ x_{_{m1} } &amp; x_{_{m2} } &amp; \dots &amp; x_{_{mn} } \\
     C @&gt;&gt;d&gt; D
 \end{CD}\]</span>
 <p>其中，<code>@&gt;&gt;&gt;</code> 代表右箭头, <code>@&lt;&lt;&lt;</code> 代表左箭头, <code>@VVV</code> 代表下箭头, <code>@AAA</code> 代表上箭头, <code>@=</code> 代表水平双实线, <code>@|</code> 代表竖直双实线, <code>@.</code> 代表没有箭头。 在 <code>@&gt;&gt;&gt;</code> 的 <code>&gt;&gt;&gt;</code> 之间任意插入文字即代表该箭头的注释文字。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;CD&#125;</span><br><span class="line">    A @&gt;&gt;&gt; B @&gt;&#123;\text&#123;very long label&#125;&#125;&gt;&gt; C \\</span><br><span class="line">    @. @AAA @| \\</span><br><span class="line">    D @= E @&lt;&lt;&lt; F</span><br><span class="line">\end&#123;CD&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;CD&#125;</span><br><span class="line">    A @&gt;&gt;&gt; B @&gt;&#123;\<span class="keyword">text</span>&#123;very long label&#125;&#125;&gt;&gt; C \\</span><br><span class="line">    @. @AAA @| \\</span><br><span class="line">    D @= E @&lt;&lt;&lt; F</span><br><span class="line">\end&#123;CD&#125;</span><br></pre></td></tr></table></figure>
 <span class="math display">\[\begin{CD}
     A @&gt;&gt;&gt; B @&gt;{\text{very long label}}&gt;&gt; C \\
     @. @AAA @| \\
@@ -2547,6 +2670,14 @@ x_{_{m1} } &amp; x_{_{m2} } &amp; \dots &amp; x_{_{mn} } \\
     
 
     
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="KivenC wechat" style="width: 200px; max-width: 100%;">
+    <div>微信扫一扫，订阅本博客</div>
+</div>
+
+      </div>
+    
 
     
        
@@ -2567,6 +2698,26 @@ x_{_{m1} } &amp; x_{_{m2} } &amp; \dots &amp; x_{_{mn} } \\
       
 
       
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
+          </div>
+        
+        </div>
       
       
 
@@ -2609,6 +2760,9 @@ x_{_{m1} } &amp; x_{_{m2} } &amp; \dots &amp; x_{_{mn} } \\
           
 
   
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -2625,6 +2779,8 @@ x_{_{m1} } &amp; x_{_{m2} } &amp; \dots &amp; x_{_{mn} } \\
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
     
     <div class="sidebar-inner">
 
@@ -2644,6 +2800,8 @@ x_{_{m1} } &amp; x_{_{m2} } &amp; \dots &amp; x_{_{mn} } \\
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar.gif" alt="KivenC">
             
               <p class="site-author-name" itemprop="name">KivenC</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -2837,6 +2995,8 @@ x_{_{m1} } &amp; x_{_{m2} } &amp; \dots &amp; x_{_{mn} } \\
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
         
+          <span id="scrollpercent"><span>0</span>%</span>
+        
       </div>
     
 
@@ -2880,26 +3040,33 @@ x_{_{m1} } &amp; x_{_{m2} } &amp; \dots &amp; x_{_{mn} } \\
 
 
 
+  
+
 
 
   
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
   
 
   
   
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/reading_progress/reading_progress.js"></script>
   
 
 
@@ -2941,11 +3108,369 @@ x_{_{m1} } &amp; x_{_{m2} } &amp; \dots &amp; x_{_{mn} } \\
 
 
 
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'A0ergDBGMOprBSRGbDpwxrja-gzGzoHsz',
+        appKey: '0WaD0ivIH6AgkI338F8XIm7P',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
+
 
 
   
 
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
 
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.5.0"></script>
 
 
 
@@ -3006,6 +3531,27 @@ x_{_{m1} } &amp; x_{_{m2} } &amp; \dots &amp; x_{_{mn} } \\
 
 
   
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
   
 
   
