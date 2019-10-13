@@ -180,7 +180,7 @@
 
 
   <meta name="description" content="目标 为了研究在一块板上布置多个弹簧振子对板的减振效果，给定板边缘一个初始位移，观测弹簧的变形以及板的变形情况。结构如下图所示，利用 ANSYS Workbench 有限元软件进行仿真。">
-<meta name="keywords" content="Workbench">
+<meta name="keywords" content="Workbench,弹簧振子,减振">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Workbench 中分布式弹簧振子对板的减振仿真">
 <meta property="og:url" content="http://yoursite.com/post/c15d2abe.html">
@@ -202,7 +202,7 @@
 <meta property="og:image" content="http://yoursite.com/post/c15d2abe/网格.png">
 <meta property="og:image" content="http://yoursite.com/post/c15d2abe/200Hz.gif">
 <meta property="og:image" content="http://yoursite.com/post/c15d2abe/300Hz.gif">
-<meta property="og:updated_time" content="2019-01-16T00:34:14.022Z">
+<meta property="og:updated_time" content="2019-10-13T05:51:35.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Workbench 中分布式弹簧振子对板的减振仿真">
 <meta name="twitter:description" content="目标 为了研究在一块板上布置多个弹簧振子对板的减振效果，给定板边缘一个初始位移，观测弹簧的变形以及板的变形情况。结构如下图所示，利用 ANSYS Workbench 有限元软件进行仿真。">
@@ -511,7 +511,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-16 08:34:14" itemprop="dateModified" datetime="2019-01-16T08:34:14+08:00">2019-01-16</time>
+                <time title="修改时间：2019-10-13 13:51:35" itemprop="dateModified" datetime="2019-10-13T13:51:35+08:00">2019-10-13</time>
               
             
           </span>
@@ -528,7 +528,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ANSYS/" itemprop="url" rel="index"><span itemprop="name">ANSYS</span></a></span>
 
                 
                 
@@ -612,7 +612,7 @@
 <p><img src="/post/c15d2abe/弹簧振子分布.png" title="弹簧振子分布"></p>
 <a id="more"></a>
 <h2 id="结构说明">结构说明</h2>
-<p>板的长宽均为 500 mm，厚度为 2 mm，材料为铝，使用壳单元，弹簧振子均匀分布在板上，共 25 个，弹簧的刚度为 <span class="math inline">\(9.593\times 10^3​\)</span> N/m，弹簧上端有个质点单元，质量为 0.027 kg。</p>
+<p>板的长宽均为 500 mm，厚度为 2 mm，材料为铝，使用壳单元，弹簧振子均匀分布在板上，共 25 个，弹簧的刚度为 <span class="math inline">\(9.593\times 10^3\)</span> N/m，弹簧上端有个质点单元，质量为 0.027 kg。</p>
 <p>观察分析该结构，可以发现其在 y 方向（以水平方向为 x 轴，纵向为 y 轴，垂直纸面向外为 z 轴）为对称结构，可以仅分析单条（即水平 5 个弹簧振子布置）的变形，然后通过对结果进行阵列得到最终结果。</p>
 <p><img src="/post/c15d2abe/单元结构.png" title="单元结构"></p>
 <h2 id="实现过程">实现过程</h2>
@@ -677,6 +677,10 @@
         <div class="post-tags">
           
             <a href="/tags/Workbench/" rel="tag"><i class="fa fa-tag"></i> Workbench</a>
+          
+            <a href="/tags/弹簧振子/" rel="tag"><i class="fa fa-tag"></i> 弹簧振子</a>
+          
+            <a href="/tags/减振/" rel="tag"><i class="fa fa-tag"></i> 减振</a>
           
         </div>
       
@@ -798,7 +802,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -815,7 +819,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -842,7 +858,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
